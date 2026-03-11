@@ -18,7 +18,7 @@ function GaleriyPhotos() {
     { id: 2, src: "/img/2.webp" },
     { id: 3, src: "/img/3.webp" },
     { id: 4, src: "/img/9.webp" },
-    { id: 5, src: "/img/5.webp" },
+    { id: 5, src: "/img/13.webp" },
     { id: 6, src: "/img/4.webp" },
     { id: 7, src: "/img/7.webp" },
     { id: 8, src: "/img/8.webp" },

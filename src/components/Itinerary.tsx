@@ -32,12 +32,12 @@ function Itinerary() {
   return (
     <>
       <section
-        className="animation-scroll relative w-screen   h-screen  flex overflow-hidden  z-10 max-md:flex-col
+        className="animation-scroll relative w-screen   h-[110vh]   overflow-hidden  z-10 max-sm:h-screen  py-10 px-4 
      "
       >
-        <div className="p-6 w-7/12  h-full m-auto py-10 max-sm:w-full  max-sm:flex max-sm:items-center ">
+        <div className=" w-7/12  m-auto max-sm:w-full  max-sm:flex max-sm:items-center ">
           <div className=" animate-on-scroll  bg-[url(/img/hoja.webp)]   bg-fixed bg-cover bg-no-repeat bg-start pt-10 text-[#8f8269] text-center z-10 max-lg:w-full max-lg:pt-4 max-lg:mt-0 max-lg:px-0">
-            <h2 className="animate-on-scroll font-[extraCursive] text-8xl max-lg:text-6xl ">
+            <h2 className="animate-on-scroll font-[extraCursive] text-5xl max-lg:text-6xl ">
               Itinerary
             </h2>
             <div className="h-full flex  flex-col  items-center gap-6 py-10">
@@ -47,22 +47,22 @@ function Itinerary() {
                   className="w-full  animate-on-scroll flex flex-col items-center  justify-center gap-2"
                 >
                   <div className="w-137.5  m-auto relative grid grid-cols-3  items-center  gap-2 max-sm:w-75  max-sm:gap-0">
-                    <h3 className=" font-[extraCursive] row-start-1 text-5xl max-lg:text-2xl text-end">
+                    <h3 className=" font-[extraCursive] row-start-1 text-4xl max-lg:text-2xl text-end">
                       {item.title}
                     </h3>
                     <img
-                      className="max-lg:w-12.5  max-lg:h-12.5 row-span-1 m-auto "
+                      className="w-12.5 h-12.5 row-span-1 m-auto "
                       src={item.img}
                       alt="asas"
                       width={90}
                       height={90}
                     />
 
-                    <p className="text-start text-2xl max-sm:text-sm text-nowrap row-span-2">
+                    <p className="text-start text-xl max-sm:text-sm text-nowrap row-span-2">
                       {item.houre}
                     </p>
                   </div>
-                  <span className="relative w-0.5 h-7.5 bg-[#45524c]" />
+                  <span className="relative w-0.5 h-5.5 bg-[#45524c]" />
                 </article>
               ))}
             </div>
@@ -75,13 +75,13 @@ function Itinerary() {
           </div>
         </div>
       </section>
-      <div className="sticky top-0 left-0 w-screen h-screen -mt-[100vh]  ">
+      <div className="sticky top-0 left-0 w-screen h-[110vh] -mt-[110vh]  max-sm:h-screen  max-sm:mt-0">
         <img
           src="/img/5.webp"
           alt="Foto"
           width={1920}
           height={1080}
-          className=" w-full h-screen object-cover"
+          className=" w-full h-[110vh]  max-sm:h-screen object-cover"
         />
       </div>
     </>

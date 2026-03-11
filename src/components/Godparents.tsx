@@ -20,60 +20,50 @@ interface GodparentSlide {
 
 const godparentsData: GodparentSlide[] = [
   {
-    title: "Veil Ceremony",
+    title: "Vigil",
     icon: "/icons/mano.webp",
-    names: ["Gaby Zuñiga", "Ruben Curiel"],
+    names: ["Apolinar Baltazar", "Irene Luna"],
   },
   {
     title: "Rings",
     icon: "/icons/anillos.svg",
-    names: ["Nadya Curiel", "José López"],
+    names: ["Pablo Merino", "Lorena Martinez"],
   },
-  {
-    title: "Unity Coins",
-    icon: "/icons/arras.svg",
-    names: ["Kathya Curiel", "Ricardo Limon"],
-  },
+  // {
+  //   title: "Unity Coins",
+  //   icon: "/icons/arras.svg",
+  //   names: ["Kathya Curiel", "Ricardo Limon"],
+  // },
   {
     title: "Wedding Lasso",
     icon: "/icons/lazo.svg",
-    names: ["Reyna", "Miguel del Toro"],
+    names: ["Sergio Merino", "Angeles Merino"],
   },
   {
-    title: "Bible",
+    title: "Arras",
     icon: "/icons/mano.webp",
-    names: ["Lulu Zuñiga"],
+    names: ["ergio Hernández", "Norma Hilda Baza"],
   },
-  {
-    title: "Rosary",
-    icon: "/icons/mano.webp",
-    names: ["Carmen Mondragon"],
-  },
-  {
-    title: "Bouquet",
-    icon: "/icons/mano.webp",
-    names: ["Maricela Olvera"],
-  },
+  // {
+  //   title: "Rosary",
+  //   icon: "/icons/mano.webp",
+  //   names: ["Carmen Mondragon"],
+  // },
+  // {
+  //   title: "Bouquet",
+  //   icon: "/icons/mano.webp",
+  //   names: ["Maricela Olvera"],
+  // },
 ];
 
 function Godparents() {
   return (
     <>
-      <div className="sticky top-0 left-0 w-screen min-h-screen  flex  justify-start">
-        <img
-          className=" w-6/10 h-screen max-lg:w-full object-cover object-top-right"
-          src="/img/8.webp"
-          alt="sasas"
-          width={1000}
-          height={1000}
-        />
-      </div>
-
-      <section className="relative -mt-[100vh]  w-screen min-h-screen  flex justify-end overflow-hidden max-lg:h-auto">
-        <div className=" animation-scroll bg-[#45524c] relative w-4/10 flex items-center justify-start max-lg:w-full max-lg:px-6 ">
+      <section className="relative  bg-[#45524c]  w-screen h-screen  flex justify-end overflow-hidden max-sm:h-auto ">
+        <div className=" animation-scroll  relative w-4/10 flex items-center justify-start max-lg:w-full max-lg:px-6 max-sm:py-10  ">
           <div
-            className="animate-on-scroll  -ml-20 w-97.5 h-122.5 bg-[url(/img/hoja.webp)] bg-fixed bg-cover bg-no-repeat bg-center py-10 text-[#45524c] text-center z-10
-        max-lg:ml-0 max-lg:w-full max-lg:-mt-10 max-lg:h-auto
+            className="animate-on-scroll  -ml-20 w-97.5 h-122.5 bg-[url(/img/hoja.webp)] bg-fixed bg-cover bg-no-repeat bg-center py-10 text-[#8f8269] text-center z-10
+        max-lg:ml-0 max-lg:w-full  max-sm:h-auto
          "
           >
             <h2 className="animate-on-scroll font-[extraCursive] text-7xl max-lg:text-5xl">
@@ -82,10 +72,10 @@ function Godparents() {
 
             <div className="relative w-full flex items-center">
               <button className="swiper-button-prev-custom absolute left-2 cursor-pointer z-10 ">
-                <IoIosArrowDropleftCircle className="text-[#45524c] text-3xl" />
+                <IoIosArrowDropleftCircle className="text-[#8f8269] text-3xl" />
               </button>
               <button className="swiper-button-next-custom absolute right-2 cursor-pointer z-10">
-                <IoIosArrowDroprightCircle className="text-[#45524c] text-3xl" />
+                <IoIosArrowDroprightCircle className="text-[#8f8269] text-3xl" />
               </button>
 
               <Swiper
@@ -125,6 +115,16 @@ function Godparents() {
           </div>
         </div>
       </section>
+
+      <div className="sticky top-0 left-0 w-screen min-h-screen  -mt-[100vh]  flex  justify-start  max-sm:hidden">
+        <img
+          className=" w-6/10 h-screen max-lg:w-full object-cover object-top-right"
+          src="/img/8.webp"
+          alt="sasas"
+          width={1000}
+          height={1000}
+        />
+      </div>
     </>
   );
 }

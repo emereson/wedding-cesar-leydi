@@ -30,14 +30,13 @@ const storyData = [
     img: "/img/ourStories/03.webp",
     icon: "/img/ourStories/A03.webp",
     title: "OUR FIRST VEGAS",
-    description:
-      "Our first Vegas trip  Sept 2012  We’re big dodger fans and love Vegas. I don’t have a proposal pic.",
+    description: "Our first Vegas trip Sept 2012",
   },
 ];
 
 function OurStory() {
   return (
-    <section className="relative w-screen min-h-screen bg-[#45524c] pt-20 max-lg:pt-10 max-lg:px-6 max-sm:h-auto">
+    <section className="relative w-screen h-screen bg-[#45524c] pt-20 max-sm:py-10 max-lg:px-6 max-sm:h-auto">
       <div
         className="animation-scroll w-8/10 flex justify-end items-center text-[#8f8269] bg-[url(/img/hoja.webp)] bg-cover text-center p-4 space-y-2
         max-lg:m-auto max-lg:w-full max-lg:flex-col max-lg:h-auto"

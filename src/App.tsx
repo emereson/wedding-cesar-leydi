@@ -21,6 +21,7 @@ const DressCode = lazy(() => import("./components/DressCode"));
 
 import { FloatingAudioPlayer } from "./components/FloatingAudioPlayer/FloatingAudioPlayer";
 import { MemoScrollAnimations } from "./utils/ScrollAnimations";
+import Godparents from "./components/Godparents";
 
 export default function Home() {
   return (
@@ -61,6 +62,8 @@ export default function Home() {
 
       <Chronometer />
       <Blessing />
+      <Godparents />
+
       <Itinerary />
       <DressCode />
       <Mimbre />
