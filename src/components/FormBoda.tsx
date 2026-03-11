@@ -1,8 +1,7 @@
 import { memo, useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { toast } from "sonner";
-import { API } from "../utils/api";
+import emailjs from "@emailjs/browser";
 
 type FormData = {
   name: string;
@@ -26,7 +25,16 @@ function WeddingForm() {
     setLoading(true);
 
     try {
-      await axios.post(`${API}/laura-santos/boda-assistance`, data);
+      await emailjs.send(
+        "service_ksgjnvk", // SERVICE ID
+        "template_sjet75m", // TEMPLATE ID
+        {
+          name: data.name,
+          phone: data.phone,
+          email: data.email,
+        },
+        "RpTKmqKcvysdeeL7b", // PUBLIC KEY
+      );
 
       toast.success("Thank you for confirming your attendance!");
       reset();

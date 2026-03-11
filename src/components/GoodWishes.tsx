@@ -1,8 +1,7 @@
 import { memo, useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { toast } from "sonner";
-import { API } from "../utils/api";
+import emailjs from "@emailjs/browser";
 
 type FormData = {
   name: string;
@@ -25,8 +24,15 @@ function GoodWishes() {
     setLoading(true);
 
     try {
-      await axios.post(`${API}/laura-santos/good-wishes`, data);
-
+      await emailjs.send(
+        "service_ksgjnvk", // SERVICE ID
+        "template_jklu78m", // TEMPLATE ID
+        {
+          name: data.name,
+          message: data.message,
+        },
+        "RpTKmqKcvysdeeL7b", // PUBLIC KEY
+      );
       toast.success("Thank you for your good wishes!");
       reset();
       setOpen(false);

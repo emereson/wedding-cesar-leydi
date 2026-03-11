@@ -12,7 +12,7 @@ function Title() {
           alt="Foto"
           width={1920}
           height={1080}
-          className=" w-full h-full object-cover object-top "
+          className=" w-full h-full object-cover object-top max-sm:object-fill max-sm:object-[40%]  "
         />
       </div>
       <h1 className="relative animate-on-scroll  z-10 font-[extraCursive]  text-9xl text-white text-center max-lg:text-5xl">

@@ -74,7 +74,7 @@ function OurStory() {
                 <SwiperSlide key={index} className="w-full">
                   <div className="flex flex-col items-center justify-center gap-4 px-10 max-lg:px-6">
                     <img
-                      className="w-62.5 h-62.5 rounded-sm shadow-md shadow-neutral-800 max-lg:w-full"
+                      className={`${index === 0 ? "rotate-90" : ""} w-62.5 h-62.5 rounded-sm shadow-md shadow-neutral-800 max-lg:w-full`}
                       src={item.img}
                       alt={item.title}
                       width={500}
