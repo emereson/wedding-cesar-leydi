@@ -19,7 +19,10 @@ const FormBoda = lazy(() => import("./components/FormBoda"));
 const DressCode = lazy(() => import("./components/DressCode"));
 
 import { FloatingAudioPlayer } from "./components/FloatingAudioPlayer/FloatingAudioPlayer";
-import { MemoScrollAnimations } from "./utils/ScrollAnimations";
+import {
+  MemoScrollAnimations,
+  MemoScrollFixedImage,
+} from "./utils/ScrollAnimations";
 import Godparents from "./components/Godparents";
 
 export default function Home() {
@@ -49,7 +52,7 @@ export default function Home() {
 
         <FloatingAudioPlayer audioSrc="/love.mp3" />
         <MemoScrollAnimations />
-
+        <MemoScrollFixedImage />
         <Title />
 
         <article className="  w-full p-8 bg-[#45524c]">
