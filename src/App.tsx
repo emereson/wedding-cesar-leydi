@@ -35,15 +35,15 @@ export default function Home() {
       <div className="fixed top-4 right-4 z-50 text-white flex rounded-sm shadow-md">
         <a
           className="p-1 px-2 opacity-90 bg-[#45524c] hover:bg-[#9a8262]"
-          href="URL_ES"
+          href="https://wedding-cesar-leydi-es.creativeartvideo.com/"
         >
           ES
         </a>
         <a
           className="border-l p-1 px-2 bg-[#45524c] hover:bg-[#9a8262]"
-          href="URL_EN"
+          href="https://wedding-cesar-leydi.creativeartvideo.com/"
         >
-          En
+          EN
         </a>
       </div>
 
