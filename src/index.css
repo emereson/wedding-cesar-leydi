@@ -48,18 +48,16 @@ img {
 }
 
 /* Estado inicial (oculto, más abajo y un poco más pequeño) */
-.animate-on-scroll {
+/* .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px) scale(0.9);
-  /* Esta curva cubic-bezier es idéntica al "power3.out" de GSAP */
   transition:
     opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
     transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
-  will-change: opacity, transform; /* Optimización para móviles */
+  will-change: opacity, transform;
 }
 
-/* Estado final (visible y en su posición original) */
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
-}
+} */

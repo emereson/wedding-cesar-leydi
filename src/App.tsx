@@ -48,7 +48,7 @@ export default function Home() {
       </div>
 
       <FloatingAudioPlayer audioSrc="/love.mp3" />
-      <MemoScrollAnimations />
+      {/* <MemoScrollAnimations /> */}
 
       <Title />
 
