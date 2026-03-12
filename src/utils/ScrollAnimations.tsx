@@ -7,39 +7,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 function ScrollAnimations() {
   useEffect(() => {
-    // 1. Obtener la referencia del contenedor root
-    const rootElement =
-      document.getElementById("root") || document.documentElement;
-
-    // 2. Inicializar Lenis apuntando al contenedor específico
+    // 1. Inicializar Lenis dejando que use el window y document por defecto.
+    // Esto es CRÍTICO para que iOS Safari no colapse al hacer zoom.
     const lenis = new Lenis({
-      wrapper: rootElement, // El elemento que tiene el overflow
-      content: rootElement, // El elemento que tiene el contenido (en root suele ser el mismo)
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      autoRaf: true,
+      // autoRaf: true suele funcionar, pero sincronizarlo con el ticker de GSAP es más estable
     });
 
-    // 3. Sincronizar ScrollTrigger para que "escuche" a #root y no a la ventana global
+    // 2. Sincronizar ScrollTrigger con Lenis
     lenis.on("scroll", ScrollTrigger.update);
 
-    ScrollTrigger.scrollerProxy(rootElement, {
-      scrollTop(value) {
-        return arguments.length
-          ? lenis.scrollTo(value || 0, { immediate: true })
-          : lenis.scroll;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
+    // Sincronizar el requestAnimationFrame de Lenis con el de GSAP
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
     });
+    gsap.ticker.lagSmoothing(0);
 
-    // 4. Animaciones de entrada configuradas para el scroller #root
+    // 3. Animaciones
     const elements = document.querySelectorAll(".animate-on-scroll");
 
     elements.forEach((el) => {
@@ -54,7 +39,7 @@ function ScrollAnimations() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: el,
-            scroller: rootElement, // 👈 CRÍTICO: Indica que el scroll sucede en #root
+            // Eliminamos scroller: rootElement para que use el window nativo
             start: "top 85%",
             toggleActions: "play none none reverse",
           },
@@ -62,11 +47,9 @@ function ScrollAnimations() {
       );
     });
 
-    // Refrescar para que ScrollTrigger recalcule con el proxy
-    ScrollTrigger.refresh();
-
     return () => {
       lenis.destroy();
+      gsap.ticker.remove(lenis.raf); // Limpiar el ticker
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);

@@ -52,12 +52,6 @@ export default function Home() {
 
       <Title />
 
-      <article className="relative z-10 w-full p-8 bg-[#45524c] animate-scroll ">
-        <h2 className="animate-on-scroll  text-center font-[free] text-white text-4xl max-lg:text-2xl">
-          Our love is the greatest adventure
-        </h2>
-      </article>
-
       <Banner />
 
       <Chronometer />
