@@ -23,17 +23,9 @@
 html,
 body {
   font-family: "freeBold", Arial, Helvetica, sans-serif;
-  height: 100dvh;
+  width: 100vw;
+  height: 100vh;
   background-color: #45524c;
-  overscroll-behavior-y: none;
-  -webkit-overflow-scrolling: touch;
-}
-/* 3. CORREGIDO: El root ya no es una caja de scroll, es solo un contenedor normal */
-#root {
-  width: 100%;
-  /* Cambia 100dvh por 100vh para evitar que la altura cambie mientras scrolleas */
-  min-height: 100vh;
-  position: relative;
 }
 
 img {
