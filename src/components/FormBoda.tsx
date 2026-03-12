@@ -103,10 +103,6 @@ function WeddingForm() {
               )}
             </div>
 
-            <span className="m-auto text-center text-sm text-black">
-              With all due respect, no children.{" "}
-            </span>
-
             <div className="flex justify-end gap-2 mt-4">
               <button
                 type="submit"

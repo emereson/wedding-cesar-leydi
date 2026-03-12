@@ -32,7 +32,7 @@ function Itinerary() {
   return (
     <>
       <section
-        className="animation-scroll relative w-screen   h-[110vh]   overflow-hidden  z-10 max-sm:h-screen  py-10 px-4 
+        className="animation-scroll relative w-screen   h-225   overflow-hidden  z-10   py-10 px-4 
      "
       >
         <div className=" w-7/12  m-auto max-sm:w-full  max-sm:flex max-sm:items-center ">
@@ -75,13 +75,13 @@ function Itinerary() {
           </div>
         </div>
       </section>
-      <div className="sticky top-0 left-0 w-screen h-[110vh] -mt-[110vh]  max-sm:h-screen  max-sm:mt-0">
+      <div className="sticky top-0 left-0 w-screen h-225 -mt-225  ">
         <img
           src="/img/5.webp"
           alt="Foto"
           width={1920}
           height={1080}
-          className=" w-full h-[110vh]  max-sm:h-screen object-cover"
+          className=" w-full  h-225  object-cover"
         />
       </div>
     </>

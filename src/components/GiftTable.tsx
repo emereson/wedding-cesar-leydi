@@ -27,8 +27,8 @@ function GiftTable() {
             TABLE
           </h3>
           <p className="animate-on-scroll text-xl mt-6 max-lg:text-base">
-            If you wish to contribute to this new chapter of our lives, a cash
-            or cash only would be greatly appreciated.
+            If you wish to contribute to this new chapter of our lives, cash
+            would be greatly appreciated.
           </p>
         </div>
       </div>
