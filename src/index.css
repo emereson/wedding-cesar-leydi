@@ -20,34 +20,35 @@
   src: url("/fonts/extraCursive.woff2") format("woff2");
 }
 
-html {
-  background-color: #45524c; /* Movimos el color de fondo aquí */
-}
-
+html,
 body {
   font-family: "freeBold", Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
-  background-color: #45524c;
-}
 
+  background-color: #45524c;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+}
 /* 3. CORREGIDO: El root ya no es una caja de scroll, es solo un contenedor normal */
 #root {
   width: 100%;
-  min-height: 100dvh; /* Permite que crezca según el contenido */
+  /* Cambia 100dvh por 100vh para evitar que la altura cambie mientras scrolleas */
+  min-height: 100vh;
+  position: relative;
 }
 
 img {
   object-fit: cover;
 }
 
-/* Estado inicial (oculto, más abajo y un poco más pequeño) */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px) scale(0.9);
+  transform: translateY(20px) scale(0.95); /* Menos agresivo */
   transition:
-    opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
-    transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
-  will-change: opacity, transform;
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  /* Elimina will-change temporalmente para probar */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Ayuda a que iOS use hardware acceleration de forma más estable */
 }
 
 .animate-on-scroll.is-visible {
