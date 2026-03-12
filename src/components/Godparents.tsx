@@ -60,7 +60,7 @@ function Godparents() {
   return (
     <>
       <section className="relative  bg-[#45524c]  w-screen h-screen  flex justify-end overflow-hidden max-sm:h-auto ">
-        <div className=" animation-scroll  relative w-4/10 flex items-center justify-start max-lg:w-full max-lg:px-6 max-sm:py-10  ">
+        <div className=" animation-scroll  bg-[#45524c] relative w-4/10 flex items-center justify-start max-lg:w-full max-lg:px-6 max-sm:py-10  ">
           <div
             className="animate-on-scroll  -ml-20 w-97.5 h-122.5 bg-[url(/img/hoja.webp)] bg-fixed bg-cover bg-no-repeat bg-center py-10 text-[#8f8269] text-center z-10
         max-lg:ml-0 max-lg:w-full  max-sm:h-auto
