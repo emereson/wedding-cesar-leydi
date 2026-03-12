@@ -27,13 +27,7 @@ function Mimbre() {
         max-lg:w-full max-lg:p-0 max-lg:py-2
         "
         >
-          <img
-            className=" w-full"
-            src="/img/villa3.webp"
-            alt="asas"
-            width={800}
-            height={400}
-          />
+          <img className=" w-full" src="/img/villa3.webp" alt="asas" />
           <a
             className="w-full  flex items-center justify-center gap-2 text-3xl border border-[#45524c]  px-4 py-2 hover:bg-[#45524c] hover:text-white cursor-pointer transition
           max-lg:text-xl

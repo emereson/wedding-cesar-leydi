@@ -118,7 +118,7 @@ function SuggestionH() {
       </section>
       <div className="sticky top-0 left-0 w-screen h-screen -mt-[100vh]  max-sm:h-[50vh] max-sm:hidden">
         <img
-          className="w-6/10 h-screen  object-bottom-right max-sm:h-[50vh]"
+          className="w-6/10 h-screen  object-bottom-right "
           src="/img/6.webp"
           alt="Image"
           width={1000}
