@@ -9,61 +9,7 @@ interface ScratchHeartProps {
 const HEART_PATH =
   "M150,55 C150,55 120,15 70,15 C30,15 0,50 0,95 C0,165 150,255 150,255 C150,255 300,165 300,95 C300,50 270,15 220,15 C170,15 150,55 150,55 Z";
 
-// 1. El SVG del destello suave (La versión realista)
-const GoldFlareSVG: React.FC<{ size: number }> = ({ size }) => {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ overflow: "visible" }}
-    >
-      <defs>
-        <radialGradient
-          id="flareGradient"
-          cx="50%"
-          cy="50%"
-          r="50%"
-          fx="50%"
-          fy="50%"
-        >
-          <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
-          <stop offset="30%" stopColor="#fff6d9" stopOpacity="0.8" />
-          <stop offset="70%" stopColor="#d4af37" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#d4af37" stopOpacity="0" />
-        </radialGradient>
-
-        {/* El filtro de desenfoque que le da el toque mágico */}
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
-          <feMerge>
-            <feMergeNode in="coloredBlur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-
-      <circle
-        cx="50"
-        cy="50"
-        r="30"
-        fill="url(#flareGradient)"
-        filter="url(#glow)"
-      />
-
-      <g filter="url(#glow)">
-        <ellipse cx="50" cy="50" rx="50" ry="2" fill="#ffffff" opacity="0.8" />
-        <ellipse cx="50" cy="50" rx="30" ry="6" fill="#fff6d9" opacity="0.4" />
-        <ellipse cx="50" cy="50" rx="2" ry="50" fill="#ffffff" opacity="0.8" />
-        <ellipse cx="50" cy="50" rx="6" ry="30" fill="#fff6d9" opacity="0.4" />
-      </g>
-    </svg>
-  );
-};
-
-// 2. Campo de destellos aleatorios
+// 1. Campo de destellos aleatorios (Versión Ultra-Optimizada con CSS puro)
 const GoldFlaresField: React.FC<{ count: number }> = ({ count }) => {
   const flares = useMemo(() => {
     const flareArray = [];
@@ -72,7 +18,7 @@ const GoldFlaresField: React.FC<{ count: number }> = ({ count }) => {
         id: i,
         x: Math.random() * 240 + 30,
         y: Math.random() * 200 + 30,
-        size: Math.random() * 25 + 15,
+        size: Math.random() * 30 + 15,
         duration: Math.random() * 4 + 2,
         delay: Math.random() * 5,
         rotation: Math.random() * 90,
@@ -83,10 +29,38 @@ const GoldFlaresField: React.FC<{ count: number }> = ({ count }) => {
 
   return (
     <div className="absolute inset-0 z-0">
+      <style>{`
+        /* Efecto de destello cruzado hecho 100% en CSS para no saturar la memoria del iPhone */
+        .css-flare-inner {
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%;
+          border-radius: 50%;
+          background: radial-gradient(circle, #ffffff 0%, rgba(255,246,217,0.8) 20%, rgba(212,175,55,0) 70%);
+        }
+        .css-flare-inner::before, .css-flare-inner::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          background: #ffffff;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          box-shadow: 0 0 4px #fff6d9, 0 0 10px #d4af37;
+        }
+        .css-flare-inner::before {
+          width: 100%;
+          height: 2px;
+        }
+        .css-flare-inner::after {
+          width: 2px;
+          height: 100%;
+        }
+      `}</style>
+
       {flares.map((flare) => (
         <div
           key={flare.id}
-          className="absolute opacity-0 gold-flare-point"
+          className="absolute opacity-0"
           style={{
             top: `${flare.y}px`,
             left: `${flare.x}px`,
@@ -95,11 +69,14 @@ const GoldFlaresField: React.FC<{ count: number }> = ({ count }) => {
             animation: `goldSparkle ${flare.duration}s infinite ease-in-out`,
             animationDelay: `${flare.delay}s`,
             transformOrigin: "center center",
+            willChange: "opacity, transform", // Le dice a Safari que use la GPU
           }}
         >
-          <div style={{ transform: `rotate(${flare.rotation}deg)` }}>
-            <GoldFlareSVG size={flare.size} />
-          </div>
+          {/* El contenedor interno maneja la rotación base para no pelear con la animación */}
+          <div
+            className="css-flare-inner"
+            style={{ transform: `rotate(${flare.rotation}deg)` }}
+          />
         </div>
       ))}
     </div>
@@ -157,8 +134,7 @@ export const ScratchHeart: React.FC<ScratchHeartProps> = ({
   const draw = (e: any) => {
     if (!isDrawing.current || isScratched) return;
 
-    // NOTA: Se eliminó e.preventDefault() porque el evento es pasivo
-    // y el CSS touch-action: "none" ya previene el scroll.
+    // NOTA: No usamos preventDefault() porque Safari maneja esto con el CSS touch-action.
 
     const ctx = canvasRef.current?.getContext("2d");
     if (!ctx) return;
@@ -214,6 +190,7 @@ export const ScratchHeart: React.FC<ScratchHeartProps> = ({
         className="absolute inset-0 z-0"
       >
         <defs>
+          {/* Mantenemos el blur solo para la sombra estática del fondo, lo cual no afecta el rendimiento */}
           <filter id="deep-inset">
             <feOffset dx="0" dy="5" />
             <feGaussianBlur stdDeviation="6" result="blur" />
@@ -280,7 +257,7 @@ export const ScratchHeart: React.FC<ScratchHeartProps> = ({
         }}
       />
 
-      {/* 4. CAMPO DE DESTELLOS DORADOS */}
+      {/* 4. CAMPO DE DESTELLOS DORADOS OPTIMIZADO */}
       {!isScratched && (
         <div
           className="absolute inset-0 z-25 pointer-events-none"
@@ -289,7 +266,8 @@ export const ScratchHeart: React.FC<ScratchHeartProps> = ({
             mixBlendMode: "screen",
           }}
         >
-          <GoldFlaresField count={25} />
+          {/* Se redujo de 25 a 20 para mejorar un poco más el rendimiento en celulares viejos */}
+          <GoldFlaresField count={20} />
         </div>
       )}
 

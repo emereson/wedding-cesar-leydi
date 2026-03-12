@@ -16,23 +16,22 @@ function ScrollAnimations() {
     }
     requestAnimationFrame(raf);
 
-    // 2. INTERSECTION OBSERVER
+    // 2. INTERSECTION OBSERVER (Reemplaza a GSAP ScrollTrigger)
     const observerOptions = {
       root: null, // Usa el viewport del navegador (Evita bugs en iOS)
       rootMargin: "0px",
-      threshold: 0.1, // Se activa cuando el 10% del elemento es visible
+      threshold: 0.1, // Se activa cuando el 10% del elemento es visible (similar a top 90%)
     };
 
-    const observer = new IntersectionObserver((entries, obs) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // 1. Entra en pantalla -> Animamos hacia adentro
+          // Entra en pantalla -> Animamos hacia adentro
           entry.target.classList.add("is-visible");
-
-          // 2. Dejar de observar este elemento para que solo se anime una vez
-          obs.unobserve(entry.target);
+        } else {
+          // Sale de pantalla -> Revertimos la animación
+          entry.target.classList.remove("is-visible");
         }
-        // Eliminamos el 'else' para que no le quite la clase al salir de pantalla
       });
     }, observerOptions);
 
