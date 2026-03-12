@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 // Los primeros componentes se dejan normales para que carguen rápido al inicio (LCP)
 import Title from "./components/Title";
 import Banner from "./components/Banner";
