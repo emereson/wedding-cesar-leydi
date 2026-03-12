@@ -48,7 +48,7 @@ img {
 }
 
 /* Estado inicial (oculto, más abajo y un poco más pequeño) */
-/* .animate-on-scroll {
+.animate-on-scroll {
   opacity: 0;
   transform: translateY(30px) scale(0.9);
   transition:
@@ -60,4 +60,4 @@ img {
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
-} */
+}

@@ -1,49 +1,73 @@
 import { useEffect, memo } from "react";
 import Lenis from "lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function ScrollAnimations() {
   useEffect(() => {
-    // 1. INICIALIZAR LENIS (Solo para el scroll suave, sin enredarlo con animaciones)
+    // 1. Obtener la referencia del contenedor root
+    const rootElement =
+      document.getElementById("root") || document.documentElement;
+
+    // 2. Inicializar Lenis apuntando al contenedor específico
     const lenis = new Lenis({
+      wrapper: rootElement, // El elemento que tiene el overflow
+      content: rootElement, // El elemento que tiene el contenido (en root suele ser el mismo)
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      // Al usar requestAnimationFrame nativo, evitamos conflictos en iOS
+      autoRaf: true,
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    // 3. Sincronizar ScrollTrigger para que "escuche" a #root y no a la ventana global
+    lenis.on("scroll", ScrollTrigger.update);
 
-    // 2. INTERSECTION OBSERVER (Reemplaza a GSAP ScrollTrigger)
-    const observerOptions = {
-      root: null, // Usa el viewport del navegador (Evita bugs en iOS)
-      rootMargin: "0px",
-      threshold: 0.1, // Se activa cuando el 10% del elemento es visible (similar a top 90%)
-    };
+    ScrollTrigger.scrollerProxy(rootElement, {
+      scrollTop(value) {
+        return arguments.length
+          ? lenis.scrollTo(value || 0, { immediate: true })
+          : lenis.scroll;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+    });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Entra en pantalla -> Animamos hacia adentro
-          entry.target.classList.add("is-visible");
-        } else {
-          // Sale de pantalla -> Revertimos la animación
-          entry.target.classList.remove("is-visible");
-        }
-      });
-    }, observerOptions);
-
-    // 3. OBSERVAR TODOS LOS ELEMENTOS
+    // 4. Animaciones de entrada configuradas para el scroller #root
     const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => observer.observe(el));
 
-    // 4. LIMPIEZA AL DESMONTAR
+    elements.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 30, scale: 0.9 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            scroller: rootElement, // 👈 CRÍTICO: Indica que el scroll sucede en #root
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
+    });
+
+    // Refrescar para que ScrollTrigger recalcule con el proxy
+    ScrollTrigger.refresh();
+
     return () => {
       lenis.destroy();
-      elements.forEach((el) => observer.unobserve(el));
-      observer.disconnect();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 
