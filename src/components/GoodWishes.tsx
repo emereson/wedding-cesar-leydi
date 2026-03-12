@@ -46,7 +46,7 @@ function GoodWishes() {
 
   return (
     <section
-      className="animation-scroll relative w-screen h-dvh flex bg-[#45524c] overflow-hidden
+      className="animation-scroll relative w-screen h-screen flex bg-[#45524c] overflow-hidden
       max-lg:flex-col-reverse max-lg:h-auto"
     >
       <img

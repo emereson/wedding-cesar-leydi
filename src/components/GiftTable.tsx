@@ -3,10 +3,10 @@ import { memo } from "react";
 function GiftTable() {
   return (
     <section
-      className="relative w-screen min-h-dvh bg-[#45524c] flex overflow-hidden animation-scroll
+      className="relative w-screen min-h-screen bg-[#45524c] flex overflow-hidden animation-scroll
  max-md:flex-col"
     >
-      <div className="gitTable-section absolute top-0 left-0 w-screen h-dvh max-md:h-[50vh] max-md:relative">
+      <div className="gitTable-section absolute top-0 left-0 w-screen h-screen max-md:h-[50vh] max-md:relative">
         <img
           src="/img/7.webp"
           alt="Photo"

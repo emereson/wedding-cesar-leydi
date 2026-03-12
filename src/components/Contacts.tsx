@@ -13,7 +13,7 @@ function Contacts() {
           height={1000}
         />
       </div>
-      <section className=" w-screen h-dvh flex bg-[#45524c] justify-end  max-md:h-auto  max-sm:py-10 ">
+      <section className=" w-screen h-screen flex bg-[#45524c] justify-end  max-md:h-auto  max-sm:py-10 ">
         <div
           className=" w-4/10  flex items-center animation-scroll
         max-sm:w-full max-sm:p-4"
@@ -80,9 +80,9 @@ function Contacts() {
           </div>
         </div>
       </section>
-      <div className="sticky top-0 left-0 w-screen h-dvh -mt-[100dvh] max-sm:h-[50vh] max-sm:hidden">
+      <div className="sticky top-0 left-0 w-screen h-screen -mt-[100dvh] max-sm:h-[50vh] max-sm:hidden">
         <img
-          className="w-6/10 h-dvh  max-sm:w-full max-sm:h-[50vh]"
+          className="w-6/10 h-screen  max-sm:w-full max-sm:h-[50vh]"
           src={"/img/10.webp"}
           alt="cover"
           width={1000}

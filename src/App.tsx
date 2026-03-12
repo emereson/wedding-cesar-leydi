@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <Suspense
       fallback={
-        <div className="h-dvh bg-white flex items-center justify-center text-white">
+        <div className="h-screen bg-white flex items-center justify-center text-white">
           Loading...
         </div>
       }

@@ -25,9 +25,9 @@ function SuggestionH() {
           height={1000}
         />
       </div>
-      <section className="relative w-screen h-dvh flex bg-[#45524c] justify-end   max-sm:h-auto max-sm:py-10">
+      <section className="relative w-screen h-screen flex bg-[#45524c] justify-end   max-sm:h-auto max-sm:py-10">
         <div
-          className="animation-scroll w-4/10 h-dvh flex items-center justify-center
+          className="animation-scroll w-4/10 h-screen flex items-center justify-center
       max-lg:relative max-lg:w-full max-lg:justify-start max-lg:items-start max-lg:p-6 max-sm:h-auto"
         >
           <div
@@ -116,9 +116,9 @@ function SuggestionH() {
           </div>
         </div>
       </section>
-      <div className="sticky top-0 left-0 w-screen h-dvh -mt-[100dvh]  max-sm:h-[50vh] max-sm:hidden">
+      <div className="sticky top-0 left-0 w-screen h-screen -mt-[100dvh]  max-sm:h-[50vh] max-sm:hidden">
         <img
-          className="w-6/10 h-dvh  object-bottom-right max-sm:h-[50vh]"
+          className="w-6/10 h-screen  object-bottom-right max-sm:h-[50vh]"
           src="/img/6.webp"
           alt="Image"
           width={1000}

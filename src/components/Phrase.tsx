@@ -3,7 +3,7 @@ import { memo } from "react";
 function Phrase() {
   return (
     <section
-      className="animation-scroll w-screen h-dvh sticky top-0 p-10 text-white flex flex-col items-center font-[freeBold] 
+      className="animation-scroll w-screen h-screen sticky top-0 p-10 text-white flex flex-col items-center font-[freeBold] 
       bg-[url(/img/5.webp)] bg-cover bg-no-repeat bg-bottom max-sm:bg-position-[40%]
       "
     >
