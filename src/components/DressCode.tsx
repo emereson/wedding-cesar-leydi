@@ -13,7 +13,7 @@ function DressCode() {
       "
       >
         <article className="w-full h-full flex flex-col items-center justify-center max-lg:w-full max-lg:h-auto ">
-          <h2 className="animate-on-scroll text-8xl max-lg:text-6xl font-[extraCursive] ]">
+          <h2 className="animate-on-scroll text-8xl max-lg:text-6xl font-[extraCursive]">
             Dress
           </h2>
           <h3 className="animate-on-scroll text-5xl max-lg:text-3xl mt-2">
