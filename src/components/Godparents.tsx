@@ -59,7 +59,7 @@ const godparentsData: GodparentSlide[] = [
 function Godparents() {
   return (
     <>
-      <section className="relative  bg-[#45524c]  w-screen h-dvh  flex justify-end overflow-hidden max-sm:h-auto ">
+      <section className="relative  bg-[#45524c]  w-screen h-screen  flex justify-end overflow-hidden max-sm:h-auto ">
         <div className=" animation-scroll  relative w-4/10 flex items-center justify-start max-lg:w-full max-lg:px-6 max-sm:py-10  ">
           <div
             className="animate-on-scroll  -ml-20 w-97.5 h-122.5 bg-[url(/img/hoja.webp)] bg-fixed bg-cover bg-no-repeat bg-center py-10 text-[#8f8269] text-center z-10
@@ -116,9 +116,9 @@ function Godparents() {
         </div>
       </section>
 
-      <div className="sticky top-0 left-0 w-screen min-h-dvh  -mt-[100dvh]  flex  justify-start  max-sm:hidden">
+      <div className="sticky top-0 left-0 w-screen min-h-screen  -mt-[100vh]  flex  justify-start  max-sm:hidden">
         <img
-          className=" w-6/10 h-dvh max-lg:w-full object-cover object-top-right"
+          className=" w-6/10 h-screen max-lg:w-full object-cover object-top-right"
           src="/img/8.webp"
           alt="sasas"
           width={1000}

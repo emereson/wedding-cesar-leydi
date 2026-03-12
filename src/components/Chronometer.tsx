@@ -70,7 +70,7 @@ function Chronometer(): JSX.Element {
 
   return (
     <>
-      <section className="relative  z-10 w-screen h-dvh font-[freeBold] animation-scroll">
+      <section className="relative  z-10 w-screen h-screen font-[freeBold] animation-scroll">
         <div className="absolute w-full top-0 z-10 px-10 pt-20 flex flex-col items-center justify-start max-lg:px-4 max-sm:pt-32">
           <h2 className="text-4xl text-white animate-on-scroll max-lg:text-3xl">
             {formattedDate}
@@ -95,13 +95,13 @@ function Chronometer(): JSX.Element {
           </a>
         </div>
       </section>
-      <div className="-mt-[100dvh] sticky top-0 left-0 w-screen min-h-dvh">
+      <div className="-mt-[100vh] sticky top-0 left-0 w-screen min-h-screen">
         <img
           src="/img/3.webp"
           alt="Photo"
           width={1920}
           height={1080}
-          className=" w-full h-dvh object-cover max-sm:object-[40%]"
+          className=" w-full h-screen object-cover max-sm:object-[40%]"
         />
       </div>
     </>

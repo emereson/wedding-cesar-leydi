@@ -15,11 +15,11 @@ function Contacts() {
       </div>
       <section className=" w-screen h-screen flex bg-[#45524c] justify-end  max-md:h-auto  max-sm:py-10 ">
         <div
-          className=" w-4/10  flex items-center animation-scroll
+          className="  w-4/10  flex items-center animation-scroll bg-[#45524c] 
         max-sm:w-full max-sm:p-4"
         >
           <div
-            className=" -left-10 bg-[url(/img/hoja.webp)] bg-cover bg-center p-10 text-[#8f8269] text-center space-y-4 z-10 animate-on-scroll
+            className="  bg-[url(/img/hoja.webp)] bg-cover bg-center p-10 text-[#8f8269] text-center space-y-4 z-10 animate-on-scroll
           max-sm:left-0 max-sm:w-full
         "
           >
@@ -80,7 +80,7 @@ function Contacts() {
           </div>
         </div>
       </section>
-      <div className="sticky top-0 left-0 w-screen h-screen -mt-[100dvh] max-sm:h-[50vh] max-sm:hidden">
+      <div className="sticky top-0 left-0 w-screen h-screen bg-[#45524c]  -mt-[100vh] max-sm:h-[50vh] max-sm:hidden">
         <img
           className="w-6/10 h-screen  max-sm:w-full max-sm:h-[50vh]"
           src={"/img/10.webp"}
