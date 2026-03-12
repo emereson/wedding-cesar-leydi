@@ -36,7 +36,7 @@ const storyData = [
 
 function OurStory() {
   return (
-    <section className="relative w-screen h-screen bg-[#45524c] pt-20 max-sm:py-10 max-lg:px-6 max-sm:h-auto">
+    <section className="relative w-screen h-dvh bg-[#45524c] pt-20 max-sm:py-10 max-lg:px-6 max-sm:h-auto">
       <div
         className="animation-scroll w-8/10 flex justify-end items-center text-[#8f8269] bg-[url(/img/hoja.webp)] bg-cover text-center p-4 space-y-2
         max-lg:m-auto max-lg:w-full max-lg:flex-col max-lg:h-auto"

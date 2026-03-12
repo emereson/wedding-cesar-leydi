@@ -3,10 +3,10 @@ import { memo } from "react";
 function Title() {
   return (
     <section
-      className="relative w-screen h-screen  p-20 
+      className="relative w-screen h-dvh  p-20 
     max-lg:pt-20 max-lg:px-6"
     >
-      <div className=" absolute top-0 left-0 w-screen h-screen   ">
+      <div className=" absolute top-0 left-0 w-screen h-dvh   ">
         <img
           src="/img/1.webp"
           alt="Foto"

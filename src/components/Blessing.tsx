@@ -3,7 +3,7 @@ import { memo } from "react";
 function Blessing() {
   return (
     <>
-      <section className=" w-screen h-screen bg-[#45524c] flex overflow-hidden max-lg:h-auto">
+      <section className=" w-screen h-dvh bg-[#45524c] flex overflow-hidden max-lg:h-auto">
         <div className="animation-scroll bg-[#45524c] z-10 w-1/2 flex items-center justify-center p-14 max-lg:h-auto max-lg:w-full max-lg:px-4">
           <article className="animate-on-scroll w-full max-w-xl bg-[url(/img/hoja.webp)] bg-fixed bg-cover bg-no-repeat bg-center px-6 py-10 font-[freeBold] text-center text-[#8f8269]">
             <h2 className="animate-on-scroll text-5xl max-lg:text-2xl">
@@ -44,9 +44,9 @@ function Blessing() {
         </h2>
         </section> */}
       </section>
-      <div className="sticky top-0 left-0 w-screen min-h-screen -mt-[100vh] flex  justify-end max-sm:mt-0 max-sm:min-h-[50vh]">
+      <div className="sticky top-0 left-0 w-screen min-h-dvh -mt-[100dvh] flex  justify-end max-sm:mt-0 max-sm:min-h-[50vh]">
         <img
-          className="w-1/2 h-screen object-cover object-bottom-left max-sm:w-full max-sm:object-center max-sm:h-[50vh]"
+          className="w-1/2 h-dvh object-cover object-bottom-left max-sm:w-full max-sm:object-center max-sm:h-[50vh]"
           src={"/img/4.webp"}
           alt="Blessing Image"
           width={1000}

@@ -33,7 +33,7 @@ body {
 /* 3. CORREGIDO: El root ya no es una caja de scroll, es solo un contenedor normal */
 #root {
   width: 100%;
-  min-height: 100vh; /* Permite que crezca según el contenido */
+  min-height: 100dvh; /* Permite que crezca según el contenido */
 }
 
 img {

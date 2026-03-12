@@ -36,7 +36,7 @@ function GaleriyPhotos() {
 
   return (
     <section
-      className="relative w-screen min-h-screen bg-[#45524c] text-white flex flex-col items-center p-10
+      className="relative w-screen min-h-dvh bg-[#45524c] text-white flex flex-col items-center p-10
     max-lg:px-6"
     >
       <h2 className="font-[extraCursive] text-9xl max-lg:text-6xl">Gallery</h2>

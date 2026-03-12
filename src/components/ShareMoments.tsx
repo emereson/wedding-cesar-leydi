@@ -5,7 +5,7 @@ function ShareMoments() {
   return (
     <>
       <section
-        className="relative w-screen h-screen flex bg-[#45524c]  overflow-hidden max-sm:py-10
+        className="relative w-screen h-dvh flex bg-[#45524c]  overflow-hidden max-sm:py-10
      max-lg:justify-end max-sm:h-auto"
       >
         <div
@@ -29,7 +29,7 @@ function ShareMoments() {
           </div>
         </div>
       </section>
-      <div className="sticky top-0 left-0 w-screen h-screen -mt-[100vh] flex justify-end max-sm:mt-0 max-sm:h-[50vh]">
+      <div className="sticky top-0 left-0 w-screen h-dvh -mt-[100dvh] flex justify-end max-sm:mt-0 max-sm:h-[50vh]">
         <img
           className="w-6/10 h-full sticky top-0 max-sm:w-full max-sm:h-[50vh]"
           src="/img/8.webp"
