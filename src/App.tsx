@@ -24,8 +24,7 @@ import Godparents from "./components/Godparents";
 
 export default function Home() {
   return (
-    <div className="relative w-full">
-      {" "}
+    <div className="flex flex-col  w-screen min-h-screen overflow-x-hidden  ">
       <Suspense
         fallback={
           <div className="h-screen bg-white flex items-center justify-center text-white">
