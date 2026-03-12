@@ -24,7 +24,7 @@ import Godparents from "./components/Godparents";
 
 export default function Home() {
   return (
-    <main className=" w-screen  overflow-x-hidden overflow-y-visible ">
+    <div className=" w-screen min-h-screen overflow-x-hidden  ">
       <Suspense
         fallback={
           <div className="h-screen bg-white flex items-center justify-center text-white">
@@ -77,6 +77,6 @@ export default function Home() {
         <Phrase />
         <FormBoda />
       </Suspense>
-    </main>
+    </div>
   );
 }
