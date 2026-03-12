@@ -19,15 +19,13 @@ const FormBoda = lazy(() => import("./components/FormBoda"));
 const DressCode = lazy(() => import("./components/DressCode"));
 
 import { FloatingAudioPlayer } from "./components/FloatingAudioPlayer/FloatingAudioPlayer";
-import {
-  MemoScrollAnimations,
-  MemoScrollFixedImage,
-} from "./utils/ScrollAnimations";
+import { MemoScrollAnimations } from "./utils/ScrollAnimations";
 import Godparents from "./components/Godparents";
 
 export default function Home() {
   return (
-    <div className="flex flex-col  w-screen min-h-screen overflow-x-hidden  ">
+    <div className="relative w-full">
+      {" "}
       <Suspense
         fallback={
           <div className="h-screen bg-white flex items-center justify-center text-white">
@@ -52,7 +50,7 @@ export default function Home() {
 
         <FloatingAudioPlayer audioSrc="/love.mp3" />
         <MemoScrollAnimations />
-        <MemoScrollFixedImage />
+
         <Title />
 
         <article className="  w-full p-8 bg-[#45524c]">

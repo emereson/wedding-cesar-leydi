@@ -20,12 +20,16 @@
   src: url("/fonts/extraCursive.woff2") format("woff2");
 }
 
-html,
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
 body {
   font-family: "freeBold", Arial, Helvetica, sans-serif;
-  width: 100vw;
-  height: 100vh;
-  background-color: #45524c;
+
+  overflow: auto;
+  height: 100%;
 }
 
 img {

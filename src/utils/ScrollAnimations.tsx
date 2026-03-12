@@ -1,9 +1,6 @@
 import { useEffect, memo } from "react";
 import Lenis from "lenis";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
 function ScrollAnimations() {
   useEffect(() => {
     // 1. INICIALIZAR LENIS (Solo para el scroll suave, sin enredarlo con animaciones)
@@ -54,43 +51,4 @@ function ScrollAnimations() {
   return null;
 }
 
-function ScrollFixedImage() {
-  useEffect(() => {
-    const sections = [
-      { trigger: ".banner-section", target: ".banner-image" },
-      { trigger: ".cro-section", target: ".cro-image" },
-      { trigger: ".blessing-section", target: ".blessing-image" },
-      { trigger: ".goodParents-section", target: ".goodParents-image" },
-      { trigger: ".itinerary-section", target: ".itinerary-image" },
-      { trigger: ".gitTable-section", target: ".gitTable-image" },
-    ];
-
-    // 1. Mapeamos y creamos los triggers
-    const triggers = sections
-      .map((sec) => {
-        const el = document.querySelector(sec.trigger);
-        if (!el) return null;
-
-        return ScrollTrigger.create({
-          trigger: sec.trigger,
-          start: "top top",
-          end: "bottom top",
-          pin: sec.target,
-          pinSpacing: false,
-          pinType: "fixed",
-          anticipatePin: 1,
-        });
-      })
-      .filter((t): t is ScrollTrigger => t !== null); // 2. Filtramos los nulos correctamente
-
-    return () => {
-      // 3. Limpiamos solo los que existen
-      triggers.forEach((t) => t.kill());
-    };
-  }, []);
-
-  return null;
-}
-
 export const MemoScrollAnimations = memo(ScrollAnimations);
-export const MemoScrollFixedImage = memo(ScrollFixedImage);
