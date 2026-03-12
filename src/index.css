@@ -23,7 +23,7 @@
 html,
 body {
   font-family: "freeBold", Arial, Helvetica, sans-serif;
-
+  height: 100dvh;
   background-color: #45524c;
   overscroll-behavior-y: none;
   -webkit-overflow-scrolling: touch;
