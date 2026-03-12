@@ -116,7 +116,7 @@ function Godparents() {
         </div>
       </section>
 
-      <div className="sticky top-0 left-0 w-screen min-h-screen  bg-[#45524c]   -mt-[100vh]  flex  justify-start  max-sm:hidden">
+      <div className="sticky top-0 left-0 w-screen min-h-screen   -mt-[100vh]  flex  justify-start  max-sm:hidden">
         <img
           className=" w-6/10 h-screen max-lg:w-full object-cover object-top-right"
           src="/img/8.webp"

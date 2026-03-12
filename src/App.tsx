@@ -24,60 +24,57 @@ import Godparents from "./components/Godparents";
 
 export default function Home() {
   return (
-    <div className="relative w-full">
-      {" "}
-      <Suspense
-        fallback={
-          <div className="h-screen bg-white flex items-center justify-center text-white">
-            Loading...
-          </div>
-        }
-      >
-        <div className="fixed top-4 right-4 z-50 text-white flex rounded-sm shadow-md">
-          <a
-            className="p-1 px-2 opacity-90 bg-[#45524c] hover:bg-[#9a8262]"
-            href="URL_ES"
-          >
-            ES
-          </a>
-          <a
-            className="border-l p-1 px-2 bg-[#45524c] hover:bg-[#9a8262]"
-            href="URL_EN"
-          >
-            En
-          </a>
+    <Suspense
+      fallback={
+        <div className="h-screen bg-white flex items-center justify-center text-white">
+          Loading...
         </div>
+      }
+    >
+      <div className="fixed top-4 right-4 z-50 text-white flex rounded-sm shadow-md">
+        <a
+          className="p-1 px-2 opacity-90 bg-[#45524c] hover:bg-[#9a8262]"
+          href="URL_ES"
+        >
+          ES
+        </a>
+        <a
+          className="border-l p-1 px-2 bg-[#45524c] hover:bg-[#9a8262]"
+          href="URL_EN"
+        >
+          En
+        </a>
+      </div>
 
-        <FloatingAudioPlayer audioSrc="/love.mp3" />
-        <MemoScrollAnimations />
+      <FloatingAudioPlayer audioSrc="/love.mp3" />
+      <MemoScrollAnimations />
 
-        <Title />
+      <Title />
 
-        <article className="  w-full p-8 bg-[#45524c]">
-          <h2 className="  text-center font-[free] text-white text-4xl max-lg:text-2xl">
-            Our love is the greatest adventure
-          </h2>
-        </article>
+      <article className="  w-full p-8 bg-[#45524c]">
+        <h2 className="  text-center font-[free] text-white text-4xl max-lg:text-2xl">
+          Our love is the greatest adventure
+        </h2>
+      </article>
 
-        <Banner />
+      <Banner />
 
-        <Chronometer />
-        <Blessing />
-        <Godparents />
+      <Chronometer />
+      <Blessing />
+      <Godparents />
 
-        <Itinerary />
-        <DressCode />
-        <Mimbre />
-        <SuggestionH />
-        <GiftTable />
-        <GaleriyPhotos />
-        <ShareMoments />
-        <GoodWishes />
-        <OurStory />
-        <Contacts />
-        <Phrase />
-        <FormBoda />
-      </Suspense>
-    </div>
+      <Itinerary />
+      <DressCode />
+      <Mimbre />
+      <SuggestionH />
+      <GiftTable />
+      <GaleriyPhotos />
+      <ShareMoments />
+      <GoodWishes />
+      <OurStory />
+      <Contacts />
+      <Phrase />
+      <FormBoda />
+    </Suspense>
   );
 }
