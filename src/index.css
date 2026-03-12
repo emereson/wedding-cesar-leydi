@@ -20,25 +20,18 @@
   src: url("/fonts/extraCursive.woff2") format("woff2");
 }
 
-/* 1. ELIMINADO: scroll-behavior: smooth; 
-   Lenis ya hace esto con JavaScript. Si dejas el de CSS, ambos pelearán y 
-   causarán un efecto de "tartamudeo" o temblor. */
 html {
   background-color: #45524c; /* Movimos el color de fondo aquí */
 }
 
-/* 2. CORREGIDO: El body debe fluir naturalmente */
 body {
   font-family: "freeBold", Arial, Helvetica, sans-serif;
-  /* ELIMINADO: overflow: hidden y height: 100vh */
-  /* Solo prevenimos el scroll horizontal por si algún elemento sobresale */
   overflow-x: hidden;
   background-color: #45524c;
 }
 
 /* 3. CORREGIDO: El root ya no es una caja de scroll, es solo un contenedor normal */
 #root {
-  /* ELIMINADO: height: 100%, overflow-y: auto, overflow-x: hidden, position: relative */
   width: 100%;
   min-height: 100vh; /* Permite que crezca según el contenido */
 }

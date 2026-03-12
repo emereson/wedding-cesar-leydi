@@ -13,13 +13,13 @@ function Contacts() {
           height={1000}
         />
       </div>
-      <section className="relative w-screen h-screen flex bg-[#45524c] justify-end  max-md:h-auto  max-sm:py-10 ">
+      <section className=" w-screen h-screen flex bg-[#45524c] justify-end  max-md:h-auto  max-sm:py-10 ">
         <div
-          className="relative w-4/10  flex items-center animation-scroll
+          className=" w-4/10  flex items-center animation-scroll
         max-sm:w-full max-sm:p-4"
         >
           <div
-            className="relative -left-10 bg-[url(/img/hoja.webp)] bg-cover bg-center p-10 text-[#8f8269] text-center space-y-4 z-10 animate-on-scroll
+            className=" -left-10 bg-[url(/img/hoja.webp)] bg-cover bg-center p-10 text-[#8f8269] text-center space-y-4 z-10 animate-on-scroll
           max-sm:left-0 max-sm:w-full
         "
           >
