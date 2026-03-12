@@ -21,14 +21,16 @@
 }
 
 body {
-  width: 100vw;
+  width: 100%; /* Cambiado de 100vw a 100% */
+  min-height: 100vh;
   overflow-x: hidden;
   font-family: "freeBold", Arial, Helvetica, sans-serif;
+  background-color: #45524c; /* Fondo base para evitar parpadeos blancos */
 }
 
 #root {
   width: 100%;
-  min-height: 100dvh;
+  display: block; /* Asegúrate de que no sea flex */
 }
 
 img {

@@ -6,17 +6,17 @@ function Contacts() {
     <>
       <div className="sticky top-0 left-0 w-screen h-[50vh] hidden max-sm:block">
         <img
-          className="w-full h-[50vh]"
+          className="w-6/10 h-dvh  max-sm:w-full max-sm:h-[50vh]"
           src={"/img/10.webp"}
           alt="cover"
           width={1000}
           height={1000}
         />
       </div>
-      <section className=" w-screen h-dvh flex bg-[#45524c] z-10 justify-end  max-md:h-auto  max-sm:py-10 ">
+      <section className="relative w-screen h-screen flex bg-[#45524c] justify-end   max-sm:h-auto max-sm:py-10">
         <div
-          className=" w-4/10  flex items-center animation-scroll
-        max-sm:w-full max-sm:p-4"
+          className="animation-scroll w-4/10 h-screen flex items-center justify-center
+      max-lg:relative max-lg:w-full max-lg:justify-start max-lg:items-start max-lg:p-6 max-sm:h-auto"
         >
           <div
             className=" -left-10 bg-[url(/img/hoja.webp)] bg-cover bg-center p-10 text-[#8f8269] text-center space-y-4 z-10 animate-on-scroll
@@ -80,7 +80,7 @@ function Contacts() {
           </div>
         </div>
       </section>
-      <div className="sticky top-0 left-0 w-screen h-dvh  bg-[#45524c] -mt-[100dvh] max-sm:h-[50vh] max-sm:hidden">
+      <div className="sticky top-0 left-0 w-screen h-screen -mt-[100vh]  max-sm:h-[50vh] max-sm:hidden">
         <img
           className="w-6/10 h-dvh  max-sm:w-full max-sm:h-[50vh]"
           src={"/img/10.webp"}

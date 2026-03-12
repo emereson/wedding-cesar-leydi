@@ -26,11 +26,12 @@ export default function Home() {
   return (
     <Suspense
       fallback={
-        <div className="h-screen bg-white flex items-center justify-center text-white">
+        <div className="h-screen bg-white flex items-center justify-center text-[#45524c]">
           Loading...
         </div>
       }
     >
+      {/* Botones de Idioma */}
       <div className="fixed top-4 right-4 z-50 text-white flex rounded-sm shadow-md">
         <a
           className="p-1 px-2 opacity-90 bg-[#45524c] hover:bg-[#9a8262]"
@@ -49,32 +50,34 @@ export default function Home() {
       <FloatingAudioPlayer audioSrc="/love.mp3" />
       <MemoScrollAnimations />
 
-      <Title />
+      {/* CONTENEDOR PRINCIPAL: Sin flex, solo bloque relativo */}
+      <main className="relative w-full">
+        <Title />
 
-      <article className="  w-full p-8 bg-[#45524c]">
-        <h2 className="  text-center font-[free] text-white text-4xl max-lg:text-2xl">
-          Our love is the greatest adventure
-        </h2>
-      </article>
+        <article className="relative z-20 w-full p-8 bg-[#45524c]">
+          <h2 className="text-center font-[free] text-white text-4xl max-lg:text-2xl">
+            Our love is the greatest adventure
+          </h2>
+        </article>
 
-      <Banner />
-
-      <Chronometer />
-      <Blessing />
-      <Godparents />
-
-      <Itinerary />
-      <DressCode />
-      <Mimbre />
-      <SuggestionH />
-      <GiftTable />
-      <GaleriyPhotos />
-      <ShareMoments />
-      <GoodWishes />
-      <OurStory />
-      <Contacts />
-      <Phrase />
-      <FormBoda />
+        {/* Los componentes internos ahora podrán usar sticky correctamente */}
+        <Banner />
+        <Chronometer />
+        <Blessing />
+        <Godparents />
+        <Itinerary />
+        <DressCode />
+        <Mimbre />
+        <SuggestionH />
+        <GiftTable />
+        <GaleriyPhotos />
+        <ShareMoments />
+        <GoodWishes />
+        <OurStory />
+        <Contacts />
+        <Phrase />
+        <FormBoda />
+      </main>
     </Suspense>
   );
 }
