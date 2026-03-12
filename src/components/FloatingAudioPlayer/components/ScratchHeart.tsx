@@ -9,7 +9,7 @@ interface ScratchHeartProps {
 const HEART_PATH =
   "M150,55 C150,55 120,15 70,15 C30,15 0,50 0,95 C0,165 150,255 150,255 C150,255 300,165 300,95 C300,50 270,15 220,15 C170,15 150,55 150,55 Z";
 
-// 1. El SVG del destello suave (La versión que te gustó)
+// 1. El SVG del destello suave (La versión realista)
 const GoldFlareSVG: React.FC<{ size: number }> = ({ size }) => {
   return (
     <svg
@@ -156,7 +156,10 @@ export const ScratchHeart: React.FC<ScratchHeartProps> = ({
 
   const draw = (e: any) => {
     if (!isDrawing.current || isScratched) return;
-    if (e.cancelable) e.preventDefault();
+
+    // NOTA: Se eliminó e.preventDefault() porque el evento es pasivo
+    // y el CSS touch-action: "none" ya previene el scroll.
+
     const ctx = canvasRef.current?.getContext("2d");
     if (!ctx) return;
 
@@ -271,6 +274,8 @@ export const ScratchHeart: React.FC<ScratchHeartProps> = ({
         className={`absolute inset-0 z-20 cursor-pointer transition-opacity duration-1000 ${isScratched ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         style={{
           touchAction: "none",
+          WebkitUserSelect: "none", // Previene selección de texto en iOS Safari
+          userSelect: "none", // Previene selección de texto en otros navegadores
           filter: "drop-shadow(0px 6px 8px rgba(0,0,0,0.5))",
         }}
       />
