@@ -1,28 +1,37 @@
+import { lazy, Suspense } from "react";
 // Los primeros componentes se dejan normales para que carguen rápido al inicio (LCP)
 import Title from "./components/Title";
 import Banner from "./components/Banner";
 
+// Importaciones con Lazy Loading
+const Chronometer = lazy(() => import("./components/Chronometer"));
+const Mimbre = lazy(() => import("./components/Mimbre"));
+const Blessing = lazy(() => import("./components/Blessing"));
+const Itinerary = lazy(() => import("./components/Itinerary"));
+const SuggestionH = lazy(() => import("./components/SuggestionH"));
+const GiftTable = lazy(() => import("./components/GiftTable"));
+const GaleriyPhotos = lazy(() => import("./components/GaleriyPhotos"));
+const ShareMoments = lazy(() => import("./components/ShareMoments"));
+const GoodWishes = lazy(() => import("./components/GoodWishes"));
+const OurStory = lazy(() => import("./components/OurStory"));
+const Contacts = lazy(() => import("./components/Contacts"));
+const Phrase = lazy(() => import("./components/Phrase"));
+const FormBoda = lazy(() => import("./components/FormBoda"));
+const DressCode = lazy(() => import("./components/DressCode"));
+
 import { FloatingAudioPlayer } from "./components/FloatingAudioPlayer/FloatingAudioPlayer";
 import { MemoScrollAnimations } from "./utils/ScrollAnimations";
 import Godparents from "./components/Godparents";
-import Chronometer from "./components/Chronometer";
-import Blessing from "./components/Blessing";
-import Itinerary from "./components/Itinerary";
-import DressCode from "./components/DressCode";
-import Mimbre from "./components/Mimbre";
-import SuggestionH from "./components/SuggestionH";
-import GiftTable from "./components/GiftTable";
-import GaleriyPhotos from "./components/GaleriyPhotos";
-import ShareMoments from "./components/ShareMoments";
-import GoodWishes from "./components/GoodWishes";
-import OurStory from "./components/OurStory";
-import Contacts from "./components/Contacts";
-import Phrase from "./components/Phrase";
-import FormBoda from "./components/FormBoda";
 
 export default function Home() {
   return (
-    <>
+    <Suspense
+      fallback={
+        <div className="h-screen bg-white flex items-center justify-center text-white">
+          Loading...
+        </div>
+      }
+    >
       <div className="fixed top-4 right-4 z-50 text-white flex rounded-sm shadow-md">
         <a
           className="p-1 px-2 opacity-90 bg-[#45524c] hover:bg-[#9a8262]"
@@ -67,6 +76,6 @@ export default function Home() {
       <Contacts />
       <Phrase />
       <FormBoda />
-    </>
+    </Suspense>
   );
 }
