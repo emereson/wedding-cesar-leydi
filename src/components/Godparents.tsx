@@ -42,7 +42,7 @@ const godparentsData: GodparentSlide[] = [
   {
     title: "Arras",
     icon: "/icons/mano.webp",
-    names: ["ergio Hernández", "Norma Hilda Baza"],
+    names: ["Sergio Hernández", "Norma Hilda Baza"],
   },
   // {
   //   title: "Rosary",

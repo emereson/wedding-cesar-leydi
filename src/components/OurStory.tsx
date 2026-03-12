@@ -23,7 +23,7 @@ const storyData = [
   {
     img: "/img/ourStories/02.webp",
     icon: "/img/ourStories/A02.webp",
-    title: "FIRST DOGERS GAME",
+    title: "FIRST DODGERS  GAME",
     description: "Agust, 2012",
   },
   {
