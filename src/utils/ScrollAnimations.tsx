@@ -1,9 +1,5 @@
 import { useEffect, memo } from "react";
 import Lenis from "lenis";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
-
-gsap.registerPlugin(ScrollTrigger);
 
 function ScrollAnimations() {
   useEffect(() => {
@@ -36,7 +32,6 @@ function ScrollAnimations() {
           // 2. Dejar de observar este elemento para que solo se anime una vez
           obs.unobserve(entry.target);
         }
-        // Eliminamos el 'else' para que no le quite la clase al salir de pantalla
       });
     }, observerOptions);
 
