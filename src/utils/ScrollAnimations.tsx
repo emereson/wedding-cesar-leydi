@@ -1,23 +1,13 @@
-import { useEffect, memo, useState } from "react";
+import { useEffect, memo } from "react";
 import Lenis from "lenis";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
 function ScrollAnimations() {
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
-    // Inicializar Lenis
+    // 1. INICIALIZAR LENIS (Solo para el scroll suave, sin enredarlo con animaciones)
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      // Al usar requestAnimationFrame nativo, evitamos conflictos en iOS
     });
 
     function raf(time: number) {
@@ -26,43 +16,37 @@ function ScrollAnimations() {
     }
     requestAnimationFrame(raf);
 
-    lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add((time: number) => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
+    // 2. INTERSECTION OBSERVER
+    const observerOptions = {
+      root: null, // Usa el viewport del navegador (Evita bugs en iOS)
+      rootMargin: "0px",
+      threshold: 0.1, // Se activa cuando el 10% del elemento es visible
+    };
 
-    // Animaciones de entrada
-    const serviceArticles = document.querySelectorAll(".animation-scroll");
-    serviceArticles.forEach((article) => {
-      const elementsToAnimate = article.querySelectorAll(".animate-on-scroll");
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // 1. Entra en pantalla -> Animamos hacia adentro
+          entry.target.classList.add("is-visible");
 
-      elementsToAnimate.forEach((el, index) => {
-        gsap.fromTo(
-          el,
-          { opacity: 0, y: 20, scale: 0.7 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 1,
-            ease: "power3.out",
-            delay: index * 0.15,
-            immediateRender: false,
-            scrollTrigger: {
-              trigger: article,
-              start: "top 70%",
-              toggleActions: "play reverse play reverse",
-            },
-          },
-        );
+          // 2. Dejar de observar este elemento para que solo se anime una vez
+          obs.unobserve(entry.target);
+        }
+        // Eliminamos el 'else' para que no le quite la clase al salir de pantalla
       });
-    });
+    }, observerOptions);
 
+    // 3. OBSERVAR TODOS LOS ELEMENTOS
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => observer.observe(el));
+
+    // 4. LIMPIEZA AL DESMONTAR
     return () => {
       lenis.destroy();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      gsap.ticker.remove((time: number) => lenis.raf(time * 1000));
+      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
     };
-  }, [mounted]);
+  }, []);
 
   return null;
 }

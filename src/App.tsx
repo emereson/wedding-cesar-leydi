@@ -51,7 +51,7 @@ export default function Home() {
 
       <Title />
 
-      <article className=" z-10 w-full p-8 bg-[#45524c]">
+      <article className="  w-full p-8 bg-[#45524c]">
         <h2 className="  text-center font-[free] text-white text-4xl max-lg:text-2xl">
           Our love is the greatest adventure
         </h2>

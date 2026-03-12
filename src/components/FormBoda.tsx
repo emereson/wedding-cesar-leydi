@@ -47,7 +47,7 @@ function WeddingForm() {
   };
 
   return (
-    <section className="relative w-screen h-screen bg-[#45524c] flex overflow-hidden max-lg:flex-col-reverse max-sm:h-auto">
+    <section className=" w-screen h-screen bg-[#45524c] flex overflow-hidden max-lg:flex-col-reverse max-sm:h-auto">
       <div className="animation-scroll h-auto z-10 w-1/2 flex items-center justify-center p-14 max-lg:h-auto max-lg:w-full max-lg:px-4">
         <article className="animate-on-scroll font-[freeFa900] w-full max-w-xl bg-[url(/img/hoja.webp)] bg-fixed bg-cover bg-no-repeat bg-center px-6 py-10 text-center text-[#8f8269] max-lg:-mt-25">
           <h2 className="text-3xl mb-6 font-bold">Confirm Your Attendance</h2>
