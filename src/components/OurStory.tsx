@@ -29,8 +29,8 @@ const storyData = [
   {
     img: "/img/ourStories/03.webp",
     icon: "/img/ourStories/A03.webp",
-    title: "OUR FIRST VEGAS",
-    description: "Our first Vegas trip Sept 2012",
+    title: "OUR FIRST VEGAS TRIP",
+    description: "Sept 2012",
   },
 ];
 
