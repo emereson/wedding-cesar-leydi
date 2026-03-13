@@ -32,7 +32,7 @@ function Mimbre() {
             className="w-full  flex items-center justify-center gap-2 text-3xl border border-[#45524c]  px-4 py-2 hover:bg-[#45524c] hover:text-white cursor-pointer transition
           max-lg:text-xl
           "
-            href="https://www.google.com/maps/@35.317405,-118.9278717,15z?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D"
+            href="https://maps.app.goo.gl/rDvitnpRzfm7fnk26?g_st=iw"
             target="_blank"
           >
             <span role="img" aria-label="calendar">
