@@ -38,9 +38,9 @@ function Contacts() {
                   height={150}
                 />
                 <a
-                  href="https://wa.me/+16615927141"
+                  href="https://wa.me/+16617133931"
                   rel="noopener noreferrer"
-                  aria-label="WhatsApp to LAURA GONZÁLEZ"
+                  aria-label="WhatsApp to Leydi"
                   className="h-12.5 flex items-center gap-2 bg-[#8f8269] text-white text-2xl rounded-xl px-6
                   max-sm:text-xl
                 "
