@@ -2,10 +2,12 @@ BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
+DTSTAMP:20260315T203000Z
+UID:wedding-cesar-leydi.creativeartvideo.com/
 DTSTART;TZID=America/Los_Angeles:20260530T150000
 DTEND;TZID=America/Los_Angeles:20260530T235900
-SUMMARY:Cesar & Leydi Wedding
-DESCRIPTION:No olvides llevar tu invitación
+SUMMARY:Boda Cesar & Leydi
+DESCRIPTION:No olvides llevar tu invitación física o digital. ¡Te esperamos!
 LOCATION:7837 E White Ln, Bakersfield, CA 93307, EE. UU.
 END:VEVENT
 END:VCALENDAR
